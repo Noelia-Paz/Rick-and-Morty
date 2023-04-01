@@ -1,0 +1,17 @@
+.divBody{
+    width: 90%; 
+}
+
+
+.divChar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 50px;
+    padding: 25px;
+    border-radius: 10px;
+    
+}
