@@ -1,6 +1,5 @@
 const { Router } = require('express');
 
-//me traigo los controladores que van a ser las callbacks qque necesito
 const getCharById = require('../controllers/getCharById');
 const getCharDetail = require('../controllers/getCharDetail');
 let favs = require('../utils/favs');
@@ -26,19 +25,3 @@ router.delete('/rickandmorty/fav/:id', (req, res) => {
 });
 
 module.exports = router;
-
-//insomnia
-//http://localhost:3001/rickandmorty/detail/50
-//http://localhost:3001/rickandmorty/onsearch/50
-
-//diferencias
-//http://localhost:3001/5 es por param que forma parte de la ruta
-//localhost:3001?id=5 es info adicional pero no es parte de la ruta
-
-/*router.get('/loquesea', (req, res) => {
-  //con esta cb manejamos la logica de la ruta
-  //esta cb dice lo que se tenga que hacer segun la peticion pero no lo hace aca.
-  //lo ideal es llamar a  una funcion que haga el llamado a un servicio externo.
-});*/
-
-//Express es "UNOPINIONATED"
