@@ -7,15 +7,13 @@ import Detail from './components/Detail/Detail';
 import Form from './components/Form/Form';
 import Favorites from './components/Favorites/Favorites';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-
+import { username, password } from './utils/consts';
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate();
 
   const [access, setAccess] = useState(false);
-  const username = 'ejemplo@gmail.com';
-  const password = '123456';
 
   function login(userData) {
     if (userData.password === password && userData.username === username) {
@@ -28,13 +26,13 @@ function App() {
   }, [access]);
 
   const onSearch = id => {
-    const URL_BASE = 'https://be-a-rym.up.railway.app/api';
-    const KEY = 'a72cf9216cc1.8afed9cea69939dcff57';
+    const URL_BASE = 'http://localhost:3001';
 
     if (characters.find(character => character.id === id)) {
       return alert('Personaje repetido');
     }
-    fetch(`${URL_BASE}/character/${id}?key=${KEY}`)
+
+    fetch(`${URL_BASE}/onsearch/${id}`)
       .then(response => response.json())
       .then(data => {
         if (data.name) {

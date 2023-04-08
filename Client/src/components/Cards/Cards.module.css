@@ -1,5 +1,6 @@
 .divBody{
-    width: 90%; 
+margin-top: 20px; 
+padding: 20px; 
 }
 
 
@@ -9,8 +10,6 @@
     justify-content: space-around;
     background-color: black;
     flex-wrap: wrap;
-    width: 100%;
-    margin: 50px;
     padding: 25px;
     border-radius: 10px;
     

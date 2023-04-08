@@ -9,14 +9,14 @@ export default function Detail() {
   return (
     <div className={styles.divDetail}>
       <Link to={'/home'}>
-        <button>Home</button>
+        <button className={styles.button}>Home</button>
       </Link>
       {character.name ? (
         <div className={styles.divDetailCar}>
-          <h2>Name: {character.name}</h2>
-          <h2>Status: {character.status}</h2>
-          <h2>Specie: {character.gender}</h2>
-          <h2>Origin: {character.origin?.name}</h2>
+          <h2 className={styles.h2}>Name: {character.name}</h2>
+          <h2 className={styles.h2}>Gender: {character.gender}</h2>
+          <h2 className={styles.h2}>Specie: {character.species}</h2>
+          <h2 className={styles.h2}>Origin: {character.origin?.name}</h2>
           <img className={styles.image} src={character.image} alt="img" />
         </div>
       ) : (

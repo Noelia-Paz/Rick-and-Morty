@@ -9,7 +9,8 @@ const validation = (state, errorsState) => {
   else if (!regexEmail.test(state.username)) errors.username = 'Email invalido';
   else errors.username = '';
 
-  if (state.password.length < 6 || state.password.length > 10)
+  if (!state.password) errors.password = 'El campo no puede estar vacio';
+  else if (state.password.length < 6 || state.password.length > 10)
     errors.password = 'La contraseña debe ser entre 6 y 10 caracteres';
   else if (!/\d/.test(state.password))
     errors.password = 'La contraseña debe contener al menos un numero';

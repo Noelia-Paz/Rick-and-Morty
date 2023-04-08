@@ -30,7 +30,13 @@ const Card = props => {
       removeFavorite(props.id);
     } else {
       setIsFav(true);
-      addFavorite(props);
+      addFavorite(
+        props.id,
+        props.name,
+        props.species,
+        props.gender,
+        props.image
+      );
     }
   };
 

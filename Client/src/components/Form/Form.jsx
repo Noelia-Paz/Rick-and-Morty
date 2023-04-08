@@ -24,8 +24,12 @@ export default function Form(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    props.login(userData);
-    alert('Usuario creado con éxito');
+
+    if (userData.username && userData.password) {
+      props.login(userData);
+    } else {
+      alert('Por favor, complete todos los campos requeridos');
+    }
   };
 
   return (
